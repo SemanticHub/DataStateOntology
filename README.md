@@ -36,7 +36,7 @@
 <h3 align="center">Container States Ontology</h3>
 
   <p align="center">
-    project_description
+    Information states according to ISO 19650
     <br />
     <a href="https://github.com/sbalot/CS-Ontology"><strong>Explore the docs »</strong></a>
     <br />
