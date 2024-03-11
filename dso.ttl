@@ -1,51 +1,164 @@
-@prefix : <urn:webprotege:ontology:f09b3951-e0b6-45eb-84fe-6680c552fdf1#> .
-@prefix cs: <https://github.com/sbalot/CS-Ontology/> .
+@prefix : <https://semantichub.github.io/DataStateOntology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <urn:webprotege:ontology:f09b3951-e0b6-45eb-84fe-6680c552fdf1> .
 
-<urn:webprotege:ontology:f09b3951-e0b6-45eb-84fe-6680c552fdf1> rdf:type owl:Ontology .
+<https://semantichub.github.io/DataStateOntology/> rdf:type owl:Ontology ;
+                                                    <http://purl.org/dc/elements/1.1/Language> "en";
+                                                    <http://purl.org/dc/elements/1.1/description> "The Data States Ontology provides an ontology based on the ISO 19650  information states containing 4 state types which can be used for any resources"@en;
+                                                    <http://purl.org/dc/elements/1.1/modified> "March 11th 2024";
+                                                    <http://purl.org/dc/elements/1.1/title> "Data States Ontology";
+                                                    <http://purl.org/dc/terms/creato> _:perid3;
+                                                    <http://purl.org/dc/terms/description> "The Data States Ontology provides an ontology based on the ISO 19650  information states containing 4 major states which can be used for any resources"@en;
+                                                    <http://purl.org/dc/terms/issued> "2023-11-08"^^xsd:date;
+                                                    <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/1.0/> ;
+                                                    <http://purl.org/dc/terms/title> "Data States Ontology"@en ;
+                                                    <http://purl.org/vocab/vann/preferredNamespacePrefix> "dso" ;
+                                                    <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                                                    owl:versionInfo "March 11th 2024" ,
+                                                                    "v0.1.0" .
+
+_:perid3 rdf:type <http://xmlns.com/foaf/0.1/Person> ;                                                    
+  <http://xmlns.com/foaf/0.1/name> "Madhumitha Senthilvel" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/Language
+<http://purl.org/dc/elements/1.1/Language> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/modified
+<http://purl.org/dc/elements/1.1/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+<http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2003/06/sw-vocab-status/ns#term_status
+<http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://xmlns.com/foaf/0.1/name
+<http://xmlns.com/foaf/0.1/name> rdf:type owl:DatatypeProperty .
+
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://webprotege.stanford.edu/R854v7XKP045RBqwvRIU5zP
-<https://github.com/sbalot/CS-Ontology/ContainerState> rdf:type owl:Class ;
-                                                         rdfs:label "ContainerState"@en .
+###  https://semantichub.github.io/DataStateOntology/Container
+:Container rdf:type owl:Class ;
+              rdfs:subClassOf :resources ;
+              rdfs:label "Container"@en ;
+              rdfs:comment "An abstraction/construct used to bundle resources relevant for a particular usecase."@en;
+              rdfs:seeAlso <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#ContainerDescription>,
+                            <http://www.w3.org/ns/ldp#Container>.
 
 
-###  http://webprotege.stanford.edu/RC90zGAgLWvma1tMaZHUOnj
-<https://github.com/sbalot/CS-Ontology/Shared> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RzuvHAPxamjqqBj9SupKl> ;
-                                                         rdfs:label "Shared"@en .
+###  https://semantichub.github.io/DataStateOntology/Otherresources
+:Otherresources rdf:type owl:Class ;
+                   rdfs:subClassOf :resources ;
+                   rdfs:label "Otherresources"@en ;
+                    rdfs:comment "Resources represented in non-RDF schema"@en.
 
 
-###  http://webprotege.stanford.edu/RCPJetSSNwWcMuK54PdYvs5
-<https://github.com/sbalot/CS-Ontology/WorkInProgress> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RzuvHAPxamjqqBj9SupKl> ;
-                                                         rdfs:label "WorkInProgress"@en .
+###  https://semantichub.github.io/DataStateOntology/RDFresources
+:RDFresources rdf:type owl:Class ;
+                 rdfs:subClassOf :resources ;
+                 rdfs:label "RDFresources"@en ;
+  rdfs:comment "Resources represented in RDF Schema"@en.
 
 
-###  http://webprotege.stanford.edu/RDsCTmkUWKVMBDVsVO8PZFT
-<https://github.com/sbalot/CS-Ontology/Published> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RzuvHAPxamjqqBj9SupKl> ;
-                                                         rdfs:label "Published"@en .
+###  https://semantichub.github.io/DataStateOntology/States
+:States rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing ;
+           rdfs:label "States"@en ;
+  rdfs:comment "The state of progress of information in a project according to ISO 19650, Part 1"@en.
 
 
-###  http://webprotege.stanford.edu/RDtsXR3qxPEE8lZSTKku5to
-<https://github.com/sbalot/CS-Ontology/Archived> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RzuvHAPxamjqqBj9SupKl> ;
-                                                         rdfs:label "Archived"@en .
+###  https://semantichub.github.io/DataStateOntology/WorkInProgress
+:WorkInProgress rdf:type owl:Class ;
+   rdfs:subClassOf :States ;
+   rdfs:label "WorkInProgress"@en ;
+  rdfs:comment "Resource being dynamically modified by appointed parties internally, but are not yet shared externally."@en.
 
 
-###  http://webprotege.stanford.edu/RzuvHAPxamjqqBj9SupKl
-<https://github.com/sbalot/CS-Ontology/StateTypes> rdf:type owl:Class ;
-                                                       rdfs:subClassOf <http://webprotege.stanford.edu/R854v7XKP045RBqwvRIU5zP> ;
-                                                       rdfs:label "StateTypes"@en .
+###  https://semantichub.github.io/DataStateOntology/Shared
+:Shared rdf:type owl:Class ;
+   rdfs:subClassOf :States ;
+   rdfs:label "Shared"@en ;
+  rdfs:comment "Resource which is going to be used for furthe reference, but are not yet officially authorised"@en.
+
+
+###  https://semantichub.github.io/DataStateOntology/Published
+:Published rdf:type owl:Class ;
+   rdfs:subClassOf :States;
+   rdfs:label "Published"@en ;
+  rdfs:comment "Verified and authorised information for further use by other project participants. Legally binding information"@en.
+
+
+###  https://semantichub.github.io/DataStateOntology/Archived
+:Archived rdf:type owl:Class ;
+   rdfs:subClassOf :States ;
+   rdfs:label "Archived"@en ;
+  rdfs:comment "A log of all alterations of data made  in project development, as data in this state is frozen."@en;
+  rdfs:seeAlso <https://openscience.adaptcentre.ie/ontologies/GDPRtEXT/deliverables/docs/ontology#ArchiveData>.
+
+###  https://semantichub.github.io/DataStateOntology/resources
+:resources rdf:type owl:Class ;
+              rdfs:label "resources"@en ;
+  rdfs:comment "Everything can be a resource. Includes all kinds of data"@en;
+  rdfs:seeAlso <http://www.w3.org/ns/ldp#Resource>,
+                <http://www.w3.org/2000/01/rdf-schema#Resource>.
 
 
 ###  Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi
